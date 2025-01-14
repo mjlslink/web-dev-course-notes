@@ -1,0 +1,22 @@
+/* Write your CSS below, don't change the rules above. */
+
+ol {
+  margin-left: -40px;
+  margin-top: -20px;
+  list-style-position: inside;
+}
+p {
+  color: red;
+}
+item1 {
+  color: black;
+}
+#id-selector-demo {
+  color: green;
+}
+li[value="4"] {
+  color: blue;
+}
+* {
+  text-align: center
+}
