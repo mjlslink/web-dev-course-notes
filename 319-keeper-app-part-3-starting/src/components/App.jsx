@@ -11,15 +11,17 @@ function App() {
     {key:1, id:1, title: "Go to doctor's office", content: "Dr. Jensen"}
   ]);
 
-  function addNote(e) {
+  function addNote(newNote) {
     
-    e.preventDefault();
+//    e.preventDefault();
 
-    const noteId = notes.length +1;
-    const noteName = e.target.title.value;
-    const noteContent = e.target.content.value;
+//    const noteId = notes.length +1;
+//    const noteName = e.target.title.value;
+//    const noteContent = e.target.content.value;
     
-    setNotes([...notes, {key:noteId, id:noteId, title: noteName, content: noteContent}]);
+//    setNotes(notes => {return [...notes, {key:noteId, id:noteId, title: noteName, content: noteContent}]});
+    setNotes(notes => {return [...notes, newNote]});
+
     console.log("Notes", notes);
     
   }
@@ -36,7 +38,7 @@ function App() {
     <div>
       <Header />
       <CreateArea addNote={addNote}/>
-      {notes.map( (note) => {return <Note key={note.key} id={note.id} title={note.title} content={note.content} deleteNote={deleteNote} />})}
+      {notes.map( (note, index) => {return <Note key={index} id={index} title={note.title} content={note.content} deleteNote={deleteNote} />})}
       <Footer />
     </div>
   );
